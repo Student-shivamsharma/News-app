@@ -1,14 +1,10 @@
 
 
-
-
-
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { BiLogoMongodb } from "react-icons/bi";
 import { IoLogoGoogle } from "react-icons/io";
-import { FaApple } from "react-icons/fa";
+import { FaApple } from "react-icons/fa"
 import pht from '../images/pht.jpg'
 
 const Profile = () => {

@@ -51,7 +51,6 @@ const Register = () => {
   function clear() {
     let valid = true;
 
-    // Reset validity states
     setEmailValid(true);
     setNameValid(true);
     setUserValid(true);
@@ -93,7 +92,7 @@ const Register = () => {
     if (valid) {
       alert("Registration successful!");
     }
-    return valid; // Return overall validity
+    return valid; 
   }
 
   function containsSpecialCharacter(str) {
@@ -157,9 +156,9 @@ const Register = () => {
           </div>
         </div>
          
-         <div className="block  md:flex ">
-        <div className={`flex w-full h-12 rounded-xl md:mt-6 justify-between items-center bg-white ${!nameValid ? 'border border-red-500' : ''}`}>
-          <input className={`h-12 rounded-xl md:w-6/12  w-full ${!nameValid ? 'text-red-500' : ''}`}
+         <div className="block  md:flex gap-2">
+        <div className={`flex w-full h-12 rounded-xl md:mt-6 md:w-6/12 justify-between items-center bg-white ${!nameValid ? 'border border-red-500' : ''}`}>
+          <input className={`h-12 rounded-xl   w-full ${!nameValid ? 'text-red-500' : ''}`}
             type="text"
             value={name}
             onChange={(e) => {
@@ -173,7 +172,7 @@ const Register = () => {
           </div>
         </div>
 
-        <input className="md:w-6/12 h-12 rounded-xl w-full mt-4 md:mt-0" type="date" placeholder="DOB"  /*onChange={(e) => {
+        <input className="md:w-6/12 h-12 rounded-xl w-full mt-4 " type="date" placeholder="DOB"  /*onChange={(e) => {
               setDob(e.target.value);
             }} */ />
         </div>

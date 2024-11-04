@@ -1,7 +1,5 @@
 
 
-
-
 import React, { useState, useEffect } from 'react';
 
 const News = () => {
@@ -34,18 +32,14 @@ const News = () => {
             return (
               <div 
                 key={index} 
-                className={`border border-gray-200 rounded-lg shadow bg-black ${hasImage ? 'bg-blue' : 'bg-black'} w-96 h-96 pb-52 mt-4`} // Set a fixed width and height
+                className={`border border-gray-200 rounded-lg shadow bg-black ${hasImage ? 'bg-blue' : 'bg-black'} w-96 h-96 pb-52 mt-4`} 
               >
                 {hasImage ? (
                   <a href="#">
-                    <img 
-                      className="rounded-t-lg w-full h-48 object-cover" 
-                      src={a.urlToImage} 
-                      alt="" 
-                    />
+                    <img  className="rounded-t-lg w-full h-48 object-cover" src={a.urlToImage} alt="" />
                   </a>
                 ) : (
-                  <div className="h-20 flex items-center justify-center text-white bg-red-600 font-bold">No Image</div> // Match height with the image
+                  <div className="h-20 flex items-center justify-center text-white bg-red-600 font-bold">No Image</div> 
                 )}
                 <div className="p-5">
                   <p className="mb-3 font-normal text-white dark:text-gray-400 text-sm">{a.description}</p>
@@ -54,14 +48,15 @@ const News = () => {
                   </a>
                 </div>
               </div>
-            );
+            )
           })
-        ) : (
+        ) : 
+        (
           <p className='text-center text-4xl font-bold flex justify-center items-center loading'> News Loading........</p> 
         )}
       </div>
     </div>
-  );
+  )
 }
 
 export default News;

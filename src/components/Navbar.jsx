@@ -1,16 +1,14 @@
 
-
-
 import React, { useState } from "react";
 import { BiLogoMongodb } from "react-icons/bi";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa"
 import { Link, useNavigate } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
 
 const Navbar = () => {
   let user = JSON.parse(localStorage.getItem('user-info'));
   const navigate = useNavigate();
-  const [menuVisible, setMenuVisible] = useState(false); // State to manage menu visibility
+  const [menuVisible, setMenuVisible] = useState(false); 
 
   function logOut() {
     localStorage.clear();
@@ -18,7 +16,7 @@ const Navbar = () => {
   }
 
   const toggleMenu = () => {
-    setMenuVisible(!menuVisible); // Toggle the menu visibility
+    setMenuVisible(!menuVisible); 
   };
 
   return (
@@ -63,6 +61,7 @@ const Navbar = () => {
                 <li className="py-2"><Link to="/News" className="no-underline text-white">News</Link></li>
                 <li className="py-2"><Link to="/Profile" className="no-underline text-white">Profile</Link></li>
                 <li className="py-2"><Link to="/Register" className="no-underline text-white">Signup</Link></li>
+                <li onClick={logOut} className="text-white ">Logout</li>
               </ul>
             </div>
           )}

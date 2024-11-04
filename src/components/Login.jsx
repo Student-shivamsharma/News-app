@@ -1,10 +1,10 @@
 //
 
 
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { BiLogoMongodb } from "react-icons/bi";
-import { IoLogoGoogle } from "react-icons/io";
+import { BiLogoMongodb } from "react-icons/bi"
+import { IoLogoGoogle } from "react-icons/io"
 import { FaApple, FaFacebookF } from "react-icons/fa6";
 
 const Login = () => {
@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(''); // Reset error message
+    setError('')
 
     let item = { email, password };
 
@@ -31,20 +31,22 @@ const Login = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        setError(errorData.error || "Invalid email or password.");
-        return;
+        setError(errorData.error || "Invalid email or password.")
+        // setError(errorData.error)
+        return
       }
 
       const result = await response.json();
       localStorage.setItem("user-info", JSON.stringify(result));
-      localStorage.setItem("token", JSON.stringify(result.access));
+      localStorage.setItem("token", JSON.stringify(result.access))
       navigate("/News");
 
-    } catch (err) {
+    }
+     catch (err) {
       setError("An error occurred. Please try again.");
       console.error("Login error:", err);
     }
-  };
+  }
 
   return (
     <div className="flex items-center bg-gradient-to-t from-violet-600 from-45% to-green-500 justify-center bg-cover h-auto w-screen bg-gray-100 flex-col ">
