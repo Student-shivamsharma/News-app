@@ -20,24 +20,24 @@ const Login = () => {
     let item = { email, password };
 
     try {
-      let response = await fetch("https://e-learning-slfj.onrender.com/user/login/", {
+      let result = await fetch("https://e-learning-slfj.onrender.com/user/login/", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json"
+          Accept: "application/json"
         },
         body: JSON.stringify(item)
-      });
+      })
 
-      if (!response.ok) {
-        const errorData = await response.json();
+      if (!result.ok) {
+        const errorData = await result.json();
         setError(errorData.error || "Invalid email or password.")
         // setError(errorData.error)
         return
       }
 
-      const result = await response.json();
-      localStorage.setItem("user-info", JSON.stringify(result));
+      result = await result.json();
+      localStorage.setItem('user-info', JSON.stringify(result));
       localStorage.setItem("token", JSON.stringify(result.access))
       navigate("/News");
 

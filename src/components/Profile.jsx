@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import { BiLogoMongodb } from "react-icons/bi";
-import { IoLogoGoogle } from "react-icons/io";
+import { BiLogoMongodb } from "react-icons/bi"
+import { IoLogoGoogle } from "react-icons/io"
 import { FaApple } from "react-icons/fa"
 import pht from '../images/pht.jpg'
 
@@ -11,12 +11,12 @@ const Profile = () => {
   const [userdata, setUserData] = useState();
 
   const handleClick = () => {
-    const token = JSON.parse(localStorage.getItem('token'));
+    const token = JSON.parse(localStorage.getItem('token'))
     const header = {
       headers: {
         Authorization: `Bearer ${token}`
       }
-    };
+    }
 
     axios.get('https://e-learning-slfj.onrender.com/user/profile/', header)
       .then((res) => {
@@ -25,8 +25,8 @@ const Profile = () => {
       })
       .catch((err) => {
         console.log("error", err);
-      });
-  };
+      })
+  }
 
   handleClick();
 
@@ -34,8 +34,8 @@ const Profile = () => {
     <div className="w-screen h-auto bg-cover px-20 bg-[url('images/loginearth.jpg')]">
       <div className="icons flex text-center justify-center items-center pt-4">
         <BiLogoMongodb className="text-5xl text-red-600" />
-        <IoLogoGoogle className="text-5xl" />
-        <FaApple className="text-5xl text-black" />
+        <IoLogoGoogle className="text-5xl text-pink-500" />
+        <FaApple className="text-5xl text-yellow-500" />
       </div>
 
       <h1 className="text-white text-center">

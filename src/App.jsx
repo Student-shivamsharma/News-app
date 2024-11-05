@@ -1,11 +1,11 @@
 
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import News from "./components/News";
-import Navbar from "./components/Navbar";
-import Profile from "./components/Profile";
+import Login from "./components/Login"
+import Register from "./components/Register"
+import News from "./components/News"
+import Navbar from "./components/Navbar"
+import Profile from "./components/Profile"
 
 const App = () => {
   return (

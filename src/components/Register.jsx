@@ -1,21 +1,21 @@
 
 
 import React, { useState } from "react";
-import { FaUserPlus } from "react-icons/fa";
-import { MdAttachEmail } from "react-icons/md";
-import { RiLockPasswordFill } from "react-icons/ri";
-import { useNavigate } from 'react-router-dom';
+import { FaUserPlus } from "react-icons/fa"
+import { MdAttachEmail } from "react-icons/md"
+import { RiLockPasswordFill } from "react-icons/ri"
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("")
+  const [name, setName] = useState("")
+  const [user, setUser] = useState("")
   const [password, setPassword] = useState("");
   // const [dob, setDob] = useState("");
-  const [emailValid, setEmailValid] = useState(true);
-  const [nameValid, setNameValid] = useState(true);
-  const [userValid, setUserValid] = useState(true);
-  const [passwordValid, setPasswordValid] = useState(true);
+  const [emailValid, setEmailValid] = useState(true)
+  const [nameValid, setNameValid] = useState(true)
+  const [userValid, setUserValid] = useState(true)
+  const [passwordValid, setPasswordValid] = useState(true)
   const navigate = useNavigate();
 
   async function signUp() {
@@ -26,7 +26,7 @@ const Register = () => {
         fullname: name,
         password
         // dob
-      };
+      }
 
       console.log(item);
 
@@ -37,7 +37,7 @@ const Register = () => {
           Accept: "application/json",
         },
         body: JSON.stringify(item),
-      });
+      })
 
       result = await result.json();
       console.log(result);
@@ -80,7 +80,7 @@ const Register = () => {
     if (!user.endsWith("123")) {
       alert("Username must end with '123'.");
       valid = false;
-      setUserValid(false);
+      setUserValid(false)
     }
 
     if (password.length < 6 || !containsSpecialCharacter(password)) {
@@ -142,10 +142,7 @@ const Register = () => {
         <h1 className="text-start text-3xl font-bold">new account</h1>
 
         <div className={`flex w-full h-12 rounded-xl justify-between items-center bg-white ${!emailValid ? 'border border-red-500' : ''}`}>
-          <input className={`h-12 rounded-xl w-full ${!emailValid ? 'text-red-500' : ''}`}
-            type="text"
-            value={email}
-            onChange={(e) => {
+          <input className={`h-12 rounded-xl w-full ${!emailValid ? 'text-red-500' : ''}`} type="text" value={email} onChange={(e) => {
               setEmail(e.target.value);
               setEmailValid(true);
             }}
@@ -158,17 +155,14 @@ const Register = () => {
          
          <div className="block  md:flex gap-2">
         <div className={`flex w-full h-12 rounded-xl md:mt-6 md:w-6/12 justify-between items-center bg-white ${!nameValid ? 'border border-red-500' : ''}`}>
-          <input className={`h-12 rounded-xl   w-full ${!nameValid ? 'text-red-500' : ''}`}
-            type="text"
-            value={name}
-            onChange={(e) => {
+          <input className={`h-12 rounded-xl   w-full ${!nameValid ? 'text-red-500' : ''}`} type="text" value={name} onChange={(e) => {
               setName(e.target.value);
               setNameValid(true);
             }}
             placeholder="Enter name"
           />
           <div className="md:text-2xl text-xl text-black">
-            <FaUserPlus />
+            <FaUserPlus/>
           </div>
         </div>
 
@@ -178,32 +172,26 @@ const Register = () => {
         </div>
 
         <div className={`flex w-full h-12   rounded-xl justify-between items-center bg-white ${!userValid ? 'border border-red-500' : ''}`}>
-          <input className={`h-12 rounded-xl w-full ${!userValid ? 'text-red-500' : ''}`}
-            type="text"
-            value={user}
-            onChange={(e) => {
+          <input className={`h-12 rounded-xl w-full ${!userValid ? 'text-red-500' : ''}`} type="text" value={user} onChange={(e) => {
               setUser(e.target.value);
               setUserValid(true);
             }}
             placeholder="Username"
           />
           <div className="md:text-4xl text-xl text-black">
-            <FaUserPlus />
+            <FaUserPlus/>
           </div>
         </div>
 
         <div className={`flex w-full h-12 rounded-xl justify-between items-center bg-white ${!passwordValid ? 'border border-red-500' : ''}`}>
-          <input className={`h-12 rounded-xl w-full ${!passwordValid ? 'text-red-500' : ''}`}
-            type="password"
-            value={password}
-            onChange={(e) => {
+          <input className={`h-12 rounded-xl w-full ${!passwordValid ? 'text-red-500' : ''}`} type="password" value={password} onChange={(e) => {
               setPassword(e.target.value);
               setPasswordValid(true);
             }}
             placeholder="Enter password"
           />
           <div className="md:text-4xl text-xl text-black">
-            <RiLockPasswordFill />
+            <RiLockPasswordFill/>
           </div>
         </div>
 
